@@ -9708,6 +9708,8 @@ in
 
   copper = callPackage ../development/compilers/copper {};
 
+  cosmopolitan = callPackage ../development/compilers/cosmopolitan {};
+
   inherit (callPackages ../development/compilers/crystal {
     llvmPackages = llvmPackages_10;
   })
