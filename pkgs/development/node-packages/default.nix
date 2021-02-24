@@ -224,6 +224,10 @@ let
       '';
     };
 
+    teck-programmer = super.teck-programmer.override {
+      buildInputs = [ pkgs.libudev.dev ];
+    };
+
     vega-cli = super.vega-cli.override {
       nativeBuildInputs = [ pkgs.pkg-config ];
       buildInputs = with pkgs; [
