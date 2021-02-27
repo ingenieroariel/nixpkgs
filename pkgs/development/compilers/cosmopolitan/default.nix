@@ -8,20 +8,19 @@
 
 stdenv.mkDerivation rec {
   pname = "cosmopolitan";
-  version = "0.2";
+  version = "unstable";
 
   src = fetchFromGitHub {
     owner = "jart";
     repo = "cosmopolitan";
-    rev = version;
-    sha256 = "09bh3dpa6j1jxm9y4qgbmxz4spyn23gv1y0hlkdikcvfz1yvmgm4";
+    rev = "cdc54ea1fd86253ced49dd24d45660cadac1d018";
+    hash = "sha256-vIDNWaM2+ztwx9hknl5+3ENkx9FxH7/VQ8uUW/sckyg=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
 
   preBuild = ''
     makeFlagsArray=(SHELL=/bin/sh "MKDIR=mkdir -p")
-    rm test/libc/time/strftime_test.c  # segfaults
   '';
 
   installPhase = ''
